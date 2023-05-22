@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ReviewCard = ({name, review}) => {
+const ReviewCard = ({name, review, userProfile}) => {
   return (
     <div className="reviews">
-    <h4>{name}</h4>
+    <h3><span>{userProfile}</span> {name}</h3>
     <p>{review}</p>
   </div>
   )
