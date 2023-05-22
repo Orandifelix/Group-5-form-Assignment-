@@ -1,15 +1,6 @@
 import React from 'react'
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
-const starIcons = [
-  <FaStar key="star1" />,
-  <FaStar key="star2" />,
-  <FaStar key="star3" />,
-  <FaStarHalfAlt key="halfStar" />,
-  <FaRegStar key="emptyStar" />,
-];
-
-const Card = ({image, title, description, ratings}) => {
+const Card = ({image, title, description, ratings, starIcons}) => {
   return (
     <div className='card'> 
       <img src={image} alt="product image" />

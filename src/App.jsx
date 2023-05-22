@@ -4,10 +4,11 @@ import { FaUser } from 'react-icons/fa';
 import Form from "./components/Form";
 import Card from "./components/Card";
 import ReviewCard from "./components/ReviewCard";
+import { starIcons } from './components/ReviewStars';
 
 
 function App() {
-  const [reviews, setReviews]= useState([{id: 1, name:"Wilder Ondieki", review:"This shirt fades easily on first wash, poor quality material. My husband hates it"},{id: 2, name:"Kelvin Kimaru", review:"The available sizes are too small for me. I wish they could have made bigger ones"}])
+  const [reviews, setReviews]= useState([{id: 1, name:"Wilder Ondieki", review:"This shirt fades easily on first wash, poor quality material. My husband hates it", ratings:""},{id: 2, name:"Kelvin Kimaru", review:"The available sizes are too small for me. I wish they could have made bigger ones", ratings:""}])
   const [ratings, setRatings]= useState(106)
   const userProfile=<FaUser/>
   const title="Simon Carter Green Shirt"
@@ -22,11 +23,11 @@ function App() {
   
   return (
     <>
-      <Card title={title} image={image} description={description} ratings={ratings}/>
+      <Card title={title} image={image} description={description} ratings={ratings} starIcons={starIcons}/>
       <div>
       <h1 className="reviews">Product Reviews</h1>
       {reviews.map((review, id) => (
-        <ReviewCard key={id} name={review.name} userProfile={userProfile} review={review.review} />
+        <ReviewCard key={id} name={review.name} Stars={starIcons} userProfile={userProfile} review={review.review} />
       ))}
     </div>
       <Form handleForm={handleForm} />
