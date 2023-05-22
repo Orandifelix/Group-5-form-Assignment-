@@ -1,15 +1,30 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import Card from "./components/Card";
+import ReviewCard from "./components/ReviewCard";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [reviews, setReviews]= useState([{id: 1, name:"Wilder Ondieki", review:"This shirt fades easily on first wash, poor quality material. My husband hates it"},{id: 2, name:"Kelvin Kimaru", review:"The available sizes are too small for me. I wish they could have made bigger ones"}])
+  const title="Simon Carter Green Shirt"
+  const image="https://imagescdn.simoncarter.in/img/app/product/4/404834-2469768.jpg"
+  const description="The Simon Carter Green Shirt is a stylish and versatile wardrobe staple that effortlessly combines classic design with contemporary flair. Made with high-quality materials and meticulous craftsmanship, this shirt exudes sophistication and refinement"
+  const handleForm = (formData) => {
+    const newId = reviews.length + 1;
+    const newReview = { id: newId, ...formData };
+    setReviews([...reviews, newReview]);
+  };
+  
   return (
     <>
-      <Card />
-      <Form />
+      <Card title={title} image={image} description={description}/>
+      <div>
+      <h1 className="reviews">Product Reviews</h1>
+      {reviews.map((review, id) => (
+        <ReviewCard key={id} name={review.name} review={review.review} />
+      ))}
+    </div>
+      <Form handleForm={handleForm} />
     </>
   );
 }

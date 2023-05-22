@@ -1,5 +1,5 @@
 #form {
-  max-width: 400px;
+  width:35%;
   margin: auto;
   padding: 20px;
   border: 5px;
@@ -53,27 +53,26 @@ button {
 
 .card {
   margin: auto;
-  background-color: whitesmoke;
-  width: 33%;
+  background-color: antiquewhite;
+  width: 50%;
+  max-width: 500px;
   display: flex;
   border-radius: 10px;
-  display: flex;
   align-items: center;
-  height:300px;
+  height:auto;
 }
 
 img {
   margin: auto;
+  margin-top: 0;
   width: 50%;
-  height: 100%;
+  height: auto;
   border-radius: 3px;
   border: 1px solid rgb(38,104,120);
 }
 .description {
   padding: 0 10px;
-  background-color: antiquewhite;
   width: 50%;
-  height:100%;
 }
 
 .card h1 {
@@ -86,6 +85,28 @@ img {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
+.card h2 span{
+  text-decoration: line-through;
+  font-size: 1rem;
+  color:rgb(107, 103, 103);
+}
+.card h2 strong{
+  font-size:1rem;
+  color:white;;
+  background-color: rgb(162, 30, 138);
+}
 .card p {
   font-size: 1 rem;
+}
+.reviews{
+  margin:auto;
+  width: 37%;
+  align-items: center;
+}
+#ratings span{
+  font-size:1.5 rem;
+  color:goldenrod;
+}
+#ratings {
+  color:blue;
 }
