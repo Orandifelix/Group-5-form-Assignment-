@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import Card from "./components/Card";
 import ReviewCard from "./components/ReviewCard";
 
+
 function App() {
   const [reviews, setReviews]= useState([{id: 1, name:"Wilder Ondieki", review:"This shirt fades easily on first wash, poor quality material. My husband hates it"},{id: 2, name:"Kelvin Kimaru", review:"The available sizes are too small for me. I wish they could have made bigger ones"}])
   const [ratings, setRatings]= useState(106)
